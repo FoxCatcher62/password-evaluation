@@ -10,13 +10,13 @@ def main(password):
         return any(char.isalpha() for char in password)
 
     def has_upper_letters(password):
-        return any(char.isupper for char in password)
+        return any(char.isupper() for char in password)
 
     def has_lower_letters(password):
-        return any(char.islower for char in password)
+        return any(char.islower() for char in password)
 
     def has_symbols(password):
-        return any(char.isalnum() for char in password)
+        return any(not char.isalnum() for char in password)
 
     def rating(password):
         my_list = [
@@ -37,5 +37,6 @@ def main(password):
 
 
 password = input("Введите пароль: ")
+
 if __name__ == "__main__":
     main(password)
